@@ -21,3 +21,6 @@ OTLP_SERVICE_NAME=
 OTLP_TRACE_ENDPOINT=
 OTLP_METRIC_ENDPOINT=
 ```
+
+<img src="Screenshot_1.png">
+<img src="Screenshot_2.png">
