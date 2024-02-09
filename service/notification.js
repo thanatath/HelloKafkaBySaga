@@ -1,6 +1,7 @@
+const thisService = "notification";
+require('../config/instrumentation.js')(thisService)
 const { clientConsumer,clientProducer  } = require('../config/kafka.js')
 const {topic} = require("../config/kafka.js");
-const thisService = "notification";
 
 // KafKa
 const _clientConsumer = clientConsumer(thisService);

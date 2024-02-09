@@ -4,14 +4,35 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently -n 'ORDER,PURCHASE,CHECKSTOCK,NOTIFICATION' -c 'red,blue,green,yellow,magenta,cyan' \"npm run start-order\" \"npm run start-purchase\" \"npm run start-checkStock\" \"npm run start-notification\"",
+    "start-order": "node ./service/order.js",
+    "start-purchase": "node ./service/purchase.js",
+    "start-checkStock": "node ./service/checkStock.js",
+    "start-notification": "node ./service/notification.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@opentelemetry/api": "^1.7.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.41.1",
+    "@opentelemetry/context-zone": "^1.21.0",
+    "@opentelemetry/exporter-collector": "^0.25.0",
+    "@opentelemetry/exporter-metrics-otlp-http": "^0.48.0",
+    "@opentelemetry/exporter-metrics-otlp-proto": "^0.48.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.48.0",
+    "@opentelemetry/exporter-trace-otlp-proto": "^0.48.0",
+    "@opentelemetry/instrumentation-document-load": "^0.35.0",
+    "@opentelemetry/sdk-trace-web": "^1.21.0",
+    "concurrently": "^8.2.2",
+    "dotenv": "^16.4.1",
     "express": "^4.18.2",
     "kafkajs": "^2.2.4",
     "node-rdkafka": "^2.18.0",
+    "npm-run-all": "^4.1.5",
+    "opentelemetry-instrumentation-kafkajs": "^0.40.0",
     "uid": "^2.0.2"
+  },
+  "devDependencies": {
+    "parcel": "^2.11.0"
   }
 }

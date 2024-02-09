@@ -1,10 +1,12 @@
+const thisService = "order";
+require('../config/instrumentation.js')(thisService)
 const { clientProducer,clientConsumer  } = require('../config/kafka.js')
 const {topic} = require("../config/kafka.js");
 const express = require("express");
 const app = express();
 const port = 3000;
 const { uid } = require("uid");
-const thisService = "order";
+
 
 // kafka
 const _clientConsumer = clientConsumer(thisService);

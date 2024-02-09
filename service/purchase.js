@@ -1,14 +1,15 @@
+const thisService = "purchase";
+require('../config/instrumentation.js')(thisService)
 const { clientConsumer,clientProducer  } = require('../config/kafka.js')
 const {topic} = require("../config/kafka.js");
 const { uid } = require("uid");
-const thisService = "purchase";
 
 // KafKa
 const _clientConsumer = clientConsumer(thisService);
 
 // Mock ThridParty Service
 const ThridPartyPaymentService = {
-  success: false,
+  success: true,
 };
 
 // Mock DataBase

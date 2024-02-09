@@ -1,6 +1,7 @@
+const thisService = "checkStock";
+require('../config/instrumentation.js')(thisService)
 const { clientConsumer,clientProducer  } = require('../config/kafka.js')
 const {topic} = require("../config/kafka.js");
-const thisService = "checkStock";
 
 // KafKa
 const _clientConsumer = clientConsumer(thisService);
@@ -9,7 +10,7 @@ const _clientConsumer = clientConsumer(thisService);
 var database = [
   {
     name:'watch',
-    stock: 5,
+    stock: 50,
   }
 ];
 
