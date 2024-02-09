@@ -12,6 +12,7 @@ Play kafka Mssage Broker System by Saga pattern and observability with opentelem
 
 1. Clone this repository.
 2. Run `npm install` to install the dependencies.
+3. Run `npm start` to execute all service instant.
 
 ## ENV
 ```
